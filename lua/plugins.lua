@@ -110,4 +110,11 @@ return {
     opts = {} -- this is equalent to setup({}) function
   },
 
+  -- markdown
+  {
+    "iamcco/markdown-preview.nvim",
+    build = function() vim.fn["mkdp#util#install"]() end,
+  }
+
+
 }

@@ -1,3 +1,4 @@
+-- 'simrat39/symbols-outline.nvim'
 -- 下面配置来自github的README
 local opts = {
   highlight_hovered_item = true,

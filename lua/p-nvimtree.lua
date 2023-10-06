@@ -1,3 +1,4 @@
+-- 'nvim-tree/nvim-tree.lua'
 local my_opts = { noremap = true, silent = true }
 vim.keymap.set('n', '<A-2>', ':NvimTreeToggle<CR>', my_opts)
 require("nvim-tree").setup({

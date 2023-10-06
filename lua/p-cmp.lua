@@ -1,3 +1,4 @@
+-- hrsh7th/nvim-cmp
 -- try to fix the popup windows width
 -- references: https://github.com/hrsh7th/nvim-cmp/issues/980#issuecomment-1121773499
 local ELLIPSIS_CHAR = '…'

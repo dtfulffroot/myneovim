@@ -1,3 +1,4 @@
+-- "neovim/nvim-lspconfig"
 -- Setup language servers.
 local lspconfig = require('lspconfig')
 lspconfig.pyright.setup {}
@@ -76,11 +77,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 -- neovim 0.10.0 inlay hints
-vim.keymap.set(
-  "n",
-  "<leader>lh",
-  function()
-    vim.lsp.inlay_hint(0, nil)
-  end,
-  { desc = "Toggle Inlay Hints" }
-)
+if vim.lsp.inlay_hint then
+  vim.keymap.set(
+    "n",
+    "<leader>lh",
+    function()
+      vim.lsp.inlay_hint(0, nil)
+    end,
+    { desc = "Toggle Inlay Hints" }
+  )
+end
