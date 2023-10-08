@@ -36,7 +36,10 @@ return {
     'hrsh7th/nvim-cmp',
     {
       'L3MON4D3/LuaSnip',
-      dependencies = { "rafamadriz/friendly-snippets" },
+      dependencies = {
+        "rafamadriz/friendly-snippets",
+        "honza/vim-snippets"
+      },
     },
     'saadparwaiz1/cmp_luasnip',
   },
@@ -117,7 +120,6 @@ return {
   {
     "iamcco/markdown-preview.nvim",
     build = function() vim.fn["mkdp#util#install"]() end,
-  }
-
+  },
 
 }

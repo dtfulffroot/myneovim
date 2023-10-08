@@ -1,4 +1,6 @@
 require("luasnip.loaders.from_vscode").lazy_load()
+require("luasnip.loaders.from_snipmate").lazy_load()
+
 local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 keymap("i", "<c-j>", "<cmd>lua require'luasnip'.jump(1)<CR>", opts)
