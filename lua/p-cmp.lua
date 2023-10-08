@@ -1,4 +1,11 @@
--- hrsh7th/nvim-cmp
+require("luasnip.loaders.from_vscode").lazy_load()
+local keymap = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
+keymap("i", "<c-j>", "<cmd>lua require'luasnip'.jump(1)<CR>", opts)
+keymap("s", "<c-j>", "<cmd>lua require'luasnip'.jump(1)<CR>", opts)
+keymap("i", "<c-k>", "<cmd>lua require'luasnip'.jump(-1)<CR>", opts)
+keymap("s", "<c-k>", "<cmd>lua require'luasnip'.jump(-1)<CR>", opts)-- hrsh7th/nvim-cmp
+
 -- try to fix the popup windows width
 -- references: https://github.com/hrsh7th/nvim-cmp/issues/980#issuecomment-1121773499
 local ELLIPSIS_CHAR = '…'
@@ -83,3 +90,4 @@ cmp.setup.cmdline(':', {
     { name = 'cmdline' }
   })
 })
+
