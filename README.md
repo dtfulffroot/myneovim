@@ -6,39 +6,27 @@
 而关于文件和插件的对应关系, 可以查看plugins.lua里面的注释:
 
 ```lua
--- lsp
-{
-  -- p-lsp.lua and p-mason.lua
-  "williamboman/mason.nvim",
-  "williamboman/mason-lspconfig.nvim",
-  "neovim/nvim-lspconfig",
-},
+  -- language server管理器以及配置
+  -- p-lsp.lua
+  {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+  },
 ```
 
-例如这里, 就说明有关这三个文件的配置可以在`p-lsp.lua and p-mason.lua`里面找到.
+例如这里, 就说明有关这三个文件的配置可以在`p-lsp.lua`里面找到. plugins.lua文件和plugins_config.lua里面的排序是首字母顺序, 因为一般情况下一个插件或者是**插件集合**只在一个文件里面出现, 所以我会在注释里面给出在lua/下的哪个文件里面给出的配置.
 
-当然在其他文件里面也会有对应的指示, 比如在p-autopairs.lua这个文件里面:
-
-```lua
--- 'windwp/nvim-autopairs'
-require("nvim-autopairs").setup {}
--- If you want insert `(` after select function or method item
-local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-local cmp = require('cmp')
-cmp.event:on(
-  'confirm_done',
-  cmp_autopairs.on_confirm_done()
-)
-```
-在最顶上一般都会标注出来配置的是哪一个插件的名字.
+原先我在p-xxx.lua里面也会给出指示, 现在我也取消掉这一点. 所有都在plugins.lua里面去找. 但是原来的注释不会取消, 可能新使用的插件没有注释, 会不够统一. 而对于每一个插件的github地址, plugins.lua里面写的一般都是仓库名字, 直接在github里面搜索即可.
 
 # 有哪些插件?
 这个比较好解决, plugins.lua里面就是安装的全部插件, 如果有哪些不好用也可以在不卸载的前提下面不在plugins_config.lua里面加载. 当然也有一些需要注意的点, 比如有一些插件是不需要加载生效的, 请看下面一些示例:
 
-p-mason.lua:
+p-lsp.lua:
 ```lua
 require("mason").setup()
 require("mason-lspconfig").setup()
+-- other config code
 ```
 
 这里想要启动mason和mason-lspconfig插件就需要require然后setup, 然后plugins_config.lua包含这个p-mason.lua, 然后在init.lua里面包含plugins_config.lua, 也就是算它启动了.
@@ -102,6 +90,8 @@ p-lsp.lua
 base.lua
 62:vim.keymap.set('i', 'jk', '<ESC>')
 ```
+
+**尤其注意时效性, 因为后来可能有新加入的快捷键, 但是所有的个人快捷键都是通过vim.keymap.set来设置的, 所以使用grep等工具可以很轻易地找到.**
 
 这里面每个插件对应的快捷键都能看出来, 当然将来文档也可能会比较旧, 不过也就是在lua目录下面一个rg的事情.
 

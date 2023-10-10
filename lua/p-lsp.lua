@@ -1,3 +1,8 @@
+-- mason相关
+require("mason").setup()
+require("mason-lspconfig").setup()
+
+
 -- "neovim/nvim-lspconfig"
 -- Setup language servers.
 local lspconfig = require('lspconfig')
