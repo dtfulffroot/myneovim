@@ -10,7 +10,6 @@ return {
       vim.cmd([[colorscheme catppuccin-macchiato]])
     end,
   },
-
   -- lsp
   {
     -- p-lsp.lua and p-mason.lua
