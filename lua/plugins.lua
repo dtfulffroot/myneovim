@@ -56,12 +56,12 @@ return {
   'ggandor/leap.nvim',
 
   -- 缩进线
-  {
-    -- p-indent_blankline.lua
-    "lukas-reineke/indent-blankline.nvim",
-    main = "ibl",
-    opts = {}
-  },
+  -- {
+  --   -- p-indent_blankline.lua
+  --   "lukas-reineke/indent-blankline.nvim",
+  --   main = "ibl",
+  --   opts = {}
+  -- },
 
   -- 顶栏 buffer指示器
   {
@@ -124,6 +124,10 @@ return {
   -- transparent!
   {
     'xiyaowong/transparent.nvim'
-  }
+  },
 
+  {
+    "shellRaining/hlchunk.nvim",
+    event = { "UIEnter" },
+  },
 }
