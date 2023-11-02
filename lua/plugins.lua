@@ -89,6 +89,11 @@ return {
     },
   },
 
+  -- 以normal模式打开文件 却想要root权限保存
+  {
+    'lambdalisue/suda.vim'
+  },
+
   -- like vscode outline
   -- p-symbol_outline.lua
   'simrat39/symbols-outline.nvim',
@@ -127,6 +132,8 @@ return {
     end,
   },
 
+  -- better neovim lua cmp
+  { "folke/neodev.nvim", opts = {} }
 
   -- 缩进线
   -- {
