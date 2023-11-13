@@ -97,10 +97,12 @@ autocmd CursorMoved * lua vim.lsp.buf.clear_references()
 
 
 -- autocmd created
-if vim.lsp.inlay_hint then
+-- according to https://github.com/neovim/neovim/pull/25512 
+-- refactor!: vim.lsp.inlay_hint() -> vim.lsp.inlay_hint.enable()
+if vim.lsp.inlay_hint.enable then
   vim.api.nvim_create_autocmd({ "BufEnter" }, {
     callback = function()
-      vim.lsp.inlay_hint(0, true)
+      vim.lsp.inlay_hint.enable(0, true)
     end
   })
 end
