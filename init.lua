@@ -20,5 +20,5 @@ require("lazy").setup("plugins", {
   },
 })
 
--- plugins
+-- plugin
 require('plugins_config')

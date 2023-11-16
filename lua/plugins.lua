@@ -132,6 +132,5 @@ return {
     end,
   },
 
-  -- better neovim lua cmp
-  { "folke/neodev.nvim",         opts = {} },
+  -- 删除neodev插件 会导致无法gd的问题
 }
