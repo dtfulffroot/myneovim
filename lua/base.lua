@@ -1,7 +1,6 @@
 -- leader设置为空格
 vim.g.mapleader = " "
 
-
 -- 和自带的插件有关?
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -97,7 +96,7 @@ autocmd CursorMoved * lua vim.lsp.buf.clear_references()
 
 
 -- autocmd created
--- according to https://github.com/neovim/neovim/pull/25512 
+-- according to https://github.com/neovim/neovim/pull/25512
 -- refactor!: vim.lsp.inlay_hint() -> vim.lsp.inlay_hint.enable()
 if vim.lsp.inlay_hint.enable then
   vim.api.nvim_create_autocmd({ "BufEnter" }, {

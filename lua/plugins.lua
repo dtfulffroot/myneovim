@@ -133,13 +133,5 @@ return {
   },
 
   -- better neovim lua cmp
-  { "folke/neodev.nvim", opts = {} }
-
-  -- 缩进线
-  -- {
-  --   -- p-indent_blankline.lua
-  --   "lukas-reineke/indent-blankline.nvim",
-  --   main = "ibl",
-  --   opts = {}
-  -- },
+  { "folke/neodev.nvim",         opts = {} },
 }
