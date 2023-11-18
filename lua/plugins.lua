@@ -133,4 +133,6 @@ return {
   },
 
   -- 删除neodev插件 会导致无法gd的问题
+  -- 疑似是因为如果使用了neodev就用的不是neovim的库?
+  -- { "folke/neodev.nvim", opts = {} }
 }
