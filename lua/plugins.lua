@@ -81,14 +81,14 @@ return {
 
   -- 文件管理器
   -- p-nvimtree.lua
-  {
-    'nvim-tree/nvim-tree.lua',
-    requires = {
-      'nvim-tree/nvim-web-devicons',
-      -- optional, for file icons
-    },
-  },
-
+  -- {
+  --   'nvim-tree/nvim-tree.lua',
+  --   requires = {
+  --     'nvim-tree/nvim-web-devicons',
+  --     -- optional, for file icons
+  --   },
+  -- },
+  --
   -- 以normal模式打开文件 却想要root权限保存
   {
     'lambdalisue/suda.vim'
@@ -135,4 +135,10 @@ return {
   -- 删除neodev插件 会导致无法gd的问题
   -- 疑似是因为如果使用了neodev就用的不是neovim的库?
   -- { "folke/neodev.nvim", opts = {} }
+  {
+    'stevearc/oil.nvim',
+    opts = {},
+    -- Optional dependencies
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  }
 }
