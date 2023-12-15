@@ -95,13 +95,37 @@ autocmd CursorMoved * lua vim.lsp.buf.clear_references()
 ]]
 
 
+
+
 -- autocmd created
 -- according to https://github.com/neovim/neovim/pull/25512
 -- refactor!: vim.lsp.inlay_hint() -> vim.lsp.inlay_hint.enable()
-if vim.lsp.inlay_hint.enable then
-  vim.api.nvim_create_autocmd({ "BufEnter" }, {
-    callback = function()
-      vim.lsp.inlay_hint.enable(0, true)
-    end
-  })
+local function inlay_hint_relationfunc()
+  vim.lsp.inlay_hint.enable(0, true)
 end
+
+-- cannot directly use vim.lsp.inlay_hint.enable(0, true) because
+-- when BufEnter the fuction triggers while the treesitter has not prepared!
+
+
+-- vim.api.nvim_create_autocmd({ "BufEnter" }, {
+--   callback = function()
+--      vim.lsp.inlay_hint.enable(0, true)
+--   end
+-- })
+
+-- if you write like this will get error!
+
+-- Error in decoration provider vim_lsp_inlayhint.win:
+-- Error executing lua: /usr/share/nvim/runtime/lua/vim/lsp/inlay_hint.lua:322: assertion failed!
+-- stack traceback:
+--         [C]: in function 'assert'
+--         /usr/share/nvim/runtime/lua/vim/lsp/inlay_hint.lua:322: in function </usr/share/nvim/runtime/lua/vim/lsp/inlay_hint.lua:313>
+
+-- But you cannot delay because this autocmd is tryying to make every buffer you entered open inlay_hint.
+-- if you delay, the inlayhint enable may become slow when you switch between buffer. emmm?
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+  callback = function()
+    vim.schedule(inlay_hint_relationfunc)
+  end
+})
