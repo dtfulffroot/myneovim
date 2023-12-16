@@ -93,5 +93,3 @@ set signcolumn=yes
 autocmd CursorHold * lua vim.lsp.buf.document_highlight()
 autocmd CursorMoved * lua vim.lsp.buf.clear_references()
 ]]
-
-
