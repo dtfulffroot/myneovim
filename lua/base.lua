@@ -64,16 +64,18 @@ vim.o.timeoutlen = 500
 
 
 -- make .zshrc highlight like bash file
-local nvim_treesitter_status_ok = pcall(require, "nvim-treesitter.highlight")
+--local nvim_treesitter_status_ok = pcall(require, "nvim-treesitter.highlight")
 
-if nvim_treesitter_status_ok then
-  vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
-    pattern = { ".zshrc" },
-    callback = function()
-      require("nvim-treesitter.highlight").attach(0, "bash")
-    end
-  })
-end
+-- this question has been fixed by neovim !
+
+--if nvim_treesitter_status_ok then
+--  vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+--    pattern = { ".zshrc" },
+--    callback = function()
+--      require("nvim-treesitter.highlight").attach(0, "bash")
+--    end
+--  })
+--end
 
 
 -- I like 4 spaces indent
