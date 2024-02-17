@@ -1,5 +1,3 @@
-require("luasnip.loaders.from_vscode").lazy_load()
-
 local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 keymap("i", "<c-j>", "<cmd>lua require'luasnip'.jump(1)<CR>", opts)
@@ -9,7 +7,6 @@ keymap("s", "<c-k>", "<cmd>lua require'luasnip'.jump(-1)<CR>", opts)
 
 -- hrsh7th/nvim-cmp
 -- 这里不太好指明是配置的什么插件 因为和nvim-cmp的插件绑在一起的很多
--- 在推荐配置的基础上 我加上了两个snippets 一个是vim-snippets 一个是friendly-snippets
 -- 这两个都是给luasnip提供来源的
 -- try to fix the popup windows width
 -- references: https://github.com/hrsh7th/nvim-cmp/issues/980#issuecomment-1121773499

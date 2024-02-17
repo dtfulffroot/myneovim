@@ -63,6 +63,9 @@ vim.o.timeout = true
 vim.o.timeoutlen = 500
 
 
+-- 打印当前的工作目录
+-- vim.keymap.set('n', '<leader>??', ':lua print(vim.loop.cwd())<CR>')
+
 -- make .zshrc highlight like bash file
 --local nvim_treesitter_status_ok = pcall(require, "nvim-treesitter.highlight")
 
@@ -95,3 +98,4 @@ set signcolumn=yes
 autocmd CursorHold * lua vim.lsp.buf.document_highlight()
 autocmd CursorMoved * lua vim.lsp.buf.clear_references()
 ]]
+
