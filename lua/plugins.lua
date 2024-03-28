@@ -140,5 +140,9 @@ return {
     opts = {},
     -- Optional dependencies
     dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+
+  {
+    "karb94/neoscroll.nvim",
   }
 }
