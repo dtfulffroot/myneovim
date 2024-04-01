@@ -144,5 +144,10 @@ return {
 
   {
     "karb94/neoscroll.nvim",
+  },
+
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
   }
 }
