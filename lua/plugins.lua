@@ -149,5 +149,9 @@ return {
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
+  },
+
+  {
+    'norcalli/nvim-colorizer.lua'
   }
 }
