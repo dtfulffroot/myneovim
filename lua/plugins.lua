@@ -126,10 +126,10 @@ return {
     as = "catppuccin",
     lazy = false,
     priority = 1000,
-    config = function()
-      -- load the colorscheme here
-      vim.cmd([[colorscheme catppuccin-macchiato]])
-    end,
+    -- config = function()
+    --   -- load the colorscheme here
+    --   vim.cmd([[colorscheme catppuccin-macchiato]])
+    -- end,
   },
 
   -- 删除neodev插件 会导致无法gd的问题
