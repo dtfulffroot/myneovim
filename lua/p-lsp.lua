@@ -24,6 +24,8 @@ lspconfig.lua_ls.setup {
       diagnostics = {
         -- Get the language server to recognize the `vim` global
         globals = { 'vim' },
+        disable = { 'missing-fields' }
+
       },
       hint = { enable = true },
       workspace = {
