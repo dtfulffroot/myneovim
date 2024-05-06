@@ -10,8 +10,10 @@ return {
 
   -- 缓冲区栏 也就是上部
   -- p-bufferline.lua
+  -- 暂时换成非官方 因为有bug
   {
-    'akinsho/bufferline.nvim',
+    'Theyashsawarkar/bufferline.nvim',
+    -- 'akinsho/bufferline.nvim',
     version = "*",
     dependencies = 'nvim-tree/nvim-web-devicons'
   },
