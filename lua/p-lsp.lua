@@ -115,16 +115,29 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 -- neovim 0.10.0 inlay hints
+-- if vim.lsp.inlay_hint then
+--   vim.keymap.set(
+--     "n",
+--     "<leader>lh",
+--     function()
+--       if vim.lsp.inlay_hint.is_enabled({0}) then
+--         vim.lsp.inlay_hint.enable(false, 0)
+--       else
+--         vim.lsp.inlay_hint.enable(true, 0)
+--       end
+--     end,
+--     { desc = "Toggle Inlay Hints" }
+--   )
+-- end
+
+
 if vim.lsp.inlay_hint then
   vim.keymap.set(
     "n",
     "<leader>lh",
     function()
-      if vim.lsp.inlay_hint.is_enabled(0) then
-        vim.lsp.inlay_hint.enable(0, false)
-      else
-        vim.lsp.inlay_hint.enable(0, true)
-      end
+      local isEnabled = vim.lsp.inlay_hint.is_enabled({ bufnr = 0 })
+      vim.lsp.inlay_hint.enable(not isEnabled, { bufnr = 0 }) -- Correctly passing a table as the second argument
     end,
     { desc = "Toggle Inlay Hints" }
   )

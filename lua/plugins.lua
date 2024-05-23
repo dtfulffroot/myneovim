@@ -12,8 +12,7 @@ return {
   -- p-bufferline.lua
   -- 暂时换成非官方 因为有bug
   {
-    'Theyashsawarkar/bufferline.nvim',
-    -- 'akinsho/bufferline.nvim',
+    'akinsho/bufferline.nvim',
     version = "*",
     dependencies = 'nvim-tree/nvim-web-devicons'
   },
