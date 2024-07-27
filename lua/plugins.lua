@@ -75,11 +75,14 @@ return {
 
   -- markdown预览
   -- p-markdown.lua
-  {
-    "iamcco/markdown-preview.nvim",
-    build = function() vim.fn["mkdp#util#install"]() end,
-  },
+  -- {
+  --   "iamcco/markdown-preview.nvim",
+  --   build = function() vim.fn["mkdp#util#install"]() end,
+  -- },
+  --
 
+
+  --
   -- 文件管理器
   -- p-nvimtree.lua
   -- {
@@ -97,15 +100,15 @@ return {
 
   -- like vscode outline
   -- p-symbol_outline.lua
-  'simrat39/symbols-outline.nvim',
+  -- 'simrat39/symbols-outline.nvim',
 
   -- 内置终端
   -- p-toggleterm.lua
-  {
-    'akinsho/toggleterm.nvim',
-    version = "*",
-    config = true
-  },
+  -- {
+  --   'akinsho/toggleterm.nvim',
+  --   version = "*",
+  --   config = true
+  -- },
 
   -- transparent!
   -- p-transparent.lua
@@ -142,17 +145,21 @@ return {
     -- Optional dependencies
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
+  --
+  -- {
+  --   "karb94/neoscroll.nvim",
+  -- },
+  --
+  -- {
+  --   "folke/todo-comments.nvim",
+  --   dependencies = { "nvim-lua/plenary.nvim" },
+  -- },
+  --
+  -- {
+  --   'norcalli/nvim-colorizer.lua'
+  -- }
 
-  {
-    "karb94/neoscroll.nvim",
-  },
+  --
+  'boltlessengineer/smart-tab.nvim',
 
-  {
-    "folke/todo-comments.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-  },
-
-  {
-    'norcalli/nvim-colorizer.lua'
-  }
 }

@@ -46,9 +46,9 @@ vim.opt.undofile = true       -- enable persistent undo
 vim.opt.updatetime = 300      -- faster completion
 vim.opt.writebackup = false   -- if a file is being edited by another program (or was written to file while editing with another program) it is not allowed to be edited
 vim.opt.expandtab = true      -- convert tabs to spaces
-vim.opt.shiftwidth = 2        -- the number of spaces inserted for each indentation
+vim.opt.shiftwidth = 4        -- the number of spaces inserted for each indentation
 vim.opt.tabstop = 2           -- insert 2 spaces for a tab
-vim.opt.cursorline = true    -- highlight the current line
+vim.opt.cursorline = true     -- highlight the current line
 vim.opt.number = true         -- set numbered lines
 vim.opt.relativenumber = true -- set relative numbered lines
 vim.opt.numberwidth = 2       -- set number column width to 2 {default 4}
@@ -98,4 +98,3 @@ set signcolumn=yes
 autocmd CursorHold * lua vim.lsp.buf.document_highlight()
 autocmd CursorMoved * lua vim.lsp.buf.clear_references()
 ]]
-
